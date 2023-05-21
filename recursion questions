@@ -1,0 +1,74 @@
+#ques1
+#Given a number n, print 1-n.
+def printn(i,n):
+    if(i<=0):
+        return;
+    elif (i<=n):
+        print(i,end=" ")
+        i+=1
+        printn(i,n);
+        
+N = 5;
+printn(1,N);
+ 
+#ques2
+#Given a number n, print n-1.
+def PrintReverse(N):
+ 
+    if (N <= 0):
+        return;
+    else:
+        print(N, end = " ");
+        PrintReverse(N - 1);
+         
+
+N = 5;
+PrintReverse(N);
+
+
+#ques3
+#Given an array print array.
+def PrintArray(arr,i,n):
+    if(i>=n):
+        return
+    print(arr[i],end=" ")
+    PrintArray(arr,i+1,n)
+arr=[]
+n = int(input("Enter the size of the array: "))
+print("Enter the Element of the array:")
+for i in range(0,n):
+    num = int(input())
+    arr.append(num)
+
+print("Array Element Are:")
+PrintArray(arr,0,n)
+
+
+#ques4
+# Print the array in reverse.
+def reverseList(A, start, end):
+    if start >= end:
+        return
+    A[start], A[end] = A[end], A[start]
+    reverseList(A, start+1, end-1)
+ 
+A = [1, 2, 3, 4, 5, 6]
+print(A)
+reverseList(A, 0, 5)
+print("Reversed list is")
+print(A)
+
+
+#ques5
+# Find the maximum of an array.
+def findMaxRec(A, n):
+    if (n == 1):
+        return A[0]
+    return max(A[n - 1], findMaxRec(A, n - 1))
+ 
+if __name__ == "__main__":
+     
+    A = [1, 4, 45, 6, -50, 10, 2]
+    n = len(A)
+    print(findMaxRec(A, n))
+ 
